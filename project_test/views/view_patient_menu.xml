@@ -72,7 +72,8 @@
                     </group>
                     <notebook>
                         <page string="Appointment">
-
+                            <label for="appointment_id"/>
+                            <field name="appointment_id"/>
                         </page>
                         <page string="Note">
                             This is an demo note

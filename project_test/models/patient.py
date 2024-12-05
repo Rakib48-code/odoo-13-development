@@ -24,6 +24,7 @@ class HospitalPatient(models.Model):
     ref = fields.Char(string='Reference')
     check_up_date = fields.Date(string='Check Up Date', default=fields.Date.context_today)
     doctor_id = fields.Many2one('hospital.doctor', string='Doctor')
+    appointment_id = fields.Many2many('hospital.appointment', string='Appointment')
     state = fields.Selection([
         ('draft','Draft'),
         ('confirm','Confirmed'),
