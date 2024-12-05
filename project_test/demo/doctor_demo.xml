@@ -1,0 +1,73 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Demo Doctor 1 -->
+        <record id="doctor_1" model="hospital.doctor">
+            <field name="name">Dr. John Smith</field>
+            <field name="specialist">Cardiologist</field>
+            <field name="gender">male</field>
+        </record>
+
+        <!-- Demo Doctor 2 -->
+        <record id="doctor_2" model="hospital.doctor">
+            <field name="name">Dr. Emily Johnson</field>
+            <field name="specialist">Pediatrician</field>
+            <field name="gender">female</field>
+        </record>
+
+        <!-- Demo Doctor 3 -->
+        <record id="doctor_3" model="hospital.doctor">
+            <field name="name">Dr. Michael Williams</field>
+            <field name="specialist">Neurologist</field>
+            <field name="gender">male</field>
+        </record>
+
+        <!-- Demo Doctor 4 -->
+        <record id="doctor_4" model="hospital.doctor">
+            <field name="name">Dr. Sarah Brown</field>
+            <field name="specialist">Orthopedic</field>
+            <field name="gender">female</field>
+        </record>
+
+        <!-- Demo Doctor 5 -->
+        <record id="doctor_5" model="hospital.doctor">
+            <field name="name">Dr. David Wilson</field>
+            <field name="specialist">General Physician</field>
+            <field name="gender">male</field>
+        </record>
+
+        <!-- Demo Doctor 6 -->
+        <record id="doctor_6" model="hospital.doctor">
+            <field name="name">Dr. Laura Garcia</field>
+            <field name="specialist">Dermatologist</field>
+            <field name="gender">female</field>
+        </record>
+
+        <!-- Demo Doctor 7 -->
+        <record id="doctor_7" model="hospital.doctor">
+            <field name="name">Dr. Daniel Martinez</field>
+            <field name="specialist">ENT Specialist</field>
+            <field name="gender">male</field>
+        </record>
+
+        <!-- Demo Doctor 8 -->
+        <record id="doctor_8" model="hospital.doctor">
+            <field name="name">Dr. Olivia Thomas</field>
+            <field name="specialist">Ophthalmologist</field>
+            <field name="gender">female</field>
+        </record>
+
+        <!-- Demo Doctor 9 -->
+        <record id="doctor_9" model="hospital.doctor">
+            <field name="name">Dr. James Clark</field>
+            <field name="specialist">Psychiatrist</field>
+            <field name="gender">male</field>
+        </record>
+
+        <!-- Demo Doctor 10 -->
+        <record id="doctor_10" model="hospital.doctor">
+            <field name="name">Dr. Sophia Lewis</field>
+            <field name="specialist">Gynecologist</field>
+            <field name="gender">female</field>
+        </record>
+    </data>
+</odoo>
