@@ -31,3 +31,15 @@ class HospitalPatient(models.Model):
         ('cancel','Cancel')
     ], string='Status', default='draft')
 
+
+    def action_draft(self):
+        self.state = 'draft'
+
+    def action_confirm(self):
+        self.state = 'confirm'
+
+    def action_approve(self):
+        self.state = 'approve'
+
+    def action_cancel(self):
+        self.state = 'cancel'
