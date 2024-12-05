@@ -1,4 +1,5 @@
 from odoo import api, fields, models, _
+from datetime import date
 
 
 class HospitalPatient(models.Model):
@@ -12,6 +13,7 @@ class HospitalPatient(models.Model):
         ('female', 'Female')
     ], string='Gender', required=True)
     dob = fields.Date(string='Date of Birth')
+    age = fields.Integer(string='Age', compute='_compute_age')
     blood_group = fields.Selection([
         ('A+', 'A Positive'),
         ('A-', 'A Negative'),
@@ -37,8 +39,8 @@ class HospitalPatient(models.Model):
         ('approve', 'Approved'),
         ('cancel', 'Cancel')
     ], string='Status', default='draft')
-    note = fields.Char(string='Note')
-    pt_sl = fields.Char(string='Number of Serial', required=True, copy=False, readonly=True,
+    note = fields.Text(string='Note')
+    pt_sl = fields.Char(string='Number of Serial',required=True, copy=False, readonly=True,
                         default=lambda self: _('New'))
 
     @api.model
@@ -49,6 +51,17 @@ class HospitalPatient(models.Model):
             vals['pt_sl'] = self.env['ir.sequence'].next_by_code('hospital.patient') or _('New')
         res = super(HospitalPatient, self).create(vals)  # super(class name, self)
         return res
+
+
+    @api.depends('dob')
+    def _compute_age(self):
+        today = date.today()
+        for rec in self:
+            if rec.dob:
+                rec.age = today.year - rec.dob.year
+            else:
+                rec.age = 0
+
 
     def action_draft(self):
         self.state = 'draft'
