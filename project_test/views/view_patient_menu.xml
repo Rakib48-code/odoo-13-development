@@ -70,6 +70,14 @@
                             <field name="doctor_id"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Appointment">
+
+                        </page>
+                        <page string="Note">
+                            This is an demo note
+                        </page>
+                    </notebook>
                 </sheet>
                 <!-- Chatter -->
                 <div class="oe_chatter">
