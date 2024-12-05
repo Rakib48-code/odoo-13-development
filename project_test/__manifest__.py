@@ -4,7 +4,7 @@
     'summary': 'Create A Demo Module',
     'sequence': '-100',
     'version' : '13.1.4.5',
-    'depends':[],
+    'depends':['mail'],
     'data':[
         'security/ir.model.access.csv',
         'views/hospital_menu.xml',

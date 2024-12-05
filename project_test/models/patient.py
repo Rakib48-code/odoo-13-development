@@ -3,6 +3,7 @@ from odoo import api, fields, models
 class HospitalPatient(models.Model):
     _name = 'hospital.patient'
     _description = 'Hospital Patient Information'
+    _inherit = ['mail.thread','mail.activity.mixin']
 
     name = fields.Char(string='Name', required=True)
     gender = fields.Selection([
