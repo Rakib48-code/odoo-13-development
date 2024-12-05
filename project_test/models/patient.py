@@ -22,3 +22,6 @@ class HospitalPatient(models.Model):
         ('AB-', 'AB Negative'),
     ], string='Blood Group')
     ref = fields.Char(string='Reference')
+    check_up_date = fields.Date(string='Check Up Date', default=fields.Date.context_today)
+    doctor_id = fields.Many2one('hospital.doctor', string='Doctor')
+

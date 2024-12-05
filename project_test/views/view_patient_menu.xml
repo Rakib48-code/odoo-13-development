@@ -26,6 +26,8 @@
                 <field name="gender"/>
                 <field name="blood_group"/>
                 <field name="dob"/>
+                <field name="check_up_date"/>
+                <field name="doctor_id"/>
                 <field name="ref"/>
             </tree>
         </field>
@@ -48,10 +50,12 @@
                         <group>
                             <field name="gender"/>
                             <field name="blood_group"/>
+                            <field name="check_up_date"/>
                         </group>
                         <group>
                             <field name="dob"/>
                             <field name="ref"/>
+                            <field name="doctor_id"/>
                         </group>
                     </group>
                 </sheet>
