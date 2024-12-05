@@ -38,7 +38,8 @@ class HospitalPatient(models.Model):
         ('cancel', 'Cancel')
     ], string='Status', default='draft')
     note = fields.Char(string='Note')
-    pt_sl = fields.Char(string='Number of Serial')
+    pt_sl = fields.Char(string='Number of Serial', required=True, copy=False, readonly=True,
+                        default=lambda self: _('New'))
 
     @api.model
     def create(self, vals):
@@ -46,7 +47,7 @@ class HospitalPatient(models.Model):
             vals['note'] = 'New Patient'
         if vals.get('pt_sl', _('New')) == _('New'):
             vals['pt_sl'] = self.env['ir.sequence'].next_by_code('hospital.patient') or _('New')
-        res = super(HospitalPatient,self).create(vals) #super(class name, self)
+        res = super(HospitalPatient, self).create(vals)  # super(class name, self)
         return res
 
     def action_draft(self):
