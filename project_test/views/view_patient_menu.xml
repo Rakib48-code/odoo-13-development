@@ -22,6 +22,7 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree multi_edit="1">
+                <field name="pt_sl"/>
                 <field name="name"/>
                 <field name="gender"/>
                 <field name="blood_group"/>
@@ -53,13 +54,13 @@
                 </header>
                 <sheet>
                     <div class="oe_title">
-                        <label for="name"/>
                         <h1>
-                            <field name="name" placeholder="e.g. Patient Name"/>
+                            <field name="pt_sl" readonly="1"/>
                         </h1>
                     </div>
                     <group>
                         <group>
+                            <field name="name" placeholder="e.g. Patient Name"/>
                             <field name="gender"/>
                             <field name="blood_group"/>
                             <field name="check_up_date"/>
@@ -75,8 +76,29 @@
                             <label for="appointment_id"/>
                             <field name="appointment_id"/>
                         </page>
+                        <!--                        <page string="Doctor Information">-->
+                        <!--                            <group>-->
+                        <!--                                <field name="doctor_id">-->
+                        <!--                                    <tree>-->
+                        <!--                                        <field name="name"/>-->
+                        <!--                                        <field name="specialist"/>-->
+                        <!--                                        <field name="gender"/>-->
+                        <!--                                    </tree>-->
+                        <!--                                </field>-->
+                        <!--                            </group>-->
+                        <!--                        </page>-->
+                        <page string="Doctor Information">
+                            <group>
+                                <group string="Doctors">
+                                    <field name="doctor_id" widget="many2many_tags"/>
+                                    <field name="specialist"/>
+                                    <field name="doctor_gender"/>
+                                </group>
+                            </group>
+                        </page>
+
                         <page string="Note">
-                            This is an demo note
+                            <field name="note"/>
                         </page>
                     </notebook>
                 </sheet>

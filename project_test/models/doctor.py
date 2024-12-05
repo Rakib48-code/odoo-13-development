@@ -6,7 +6,7 @@ class HospitalDoctor(models.Model):
 
     name = fields.Char(string='Name', required=True)
     specialist = fields.Char(string='Specialist')
-    gender = fields.Selection([
+    doctor_gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
     ], string='Gender', required=True)
