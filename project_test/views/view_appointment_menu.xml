@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree>
                 <!--                <field name="doctor_id"/>-->
+                <field name="patient_id"/>
                 <field name="appointment_date"/>
                 <field name="booking_date"/>
                 <field name="sl_no"/>
@@ -28,6 +29,7 @@
                     <group>
                         <group>
 
+                            <field name="patient_id"/>
                             <field name="appointment_date"/>
                             <!--                            <field name="doctor_id"/>-->
                             <field name="booking_date"/>
@@ -58,4 +60,10 @@
               action="view_appointment_menu"
               parent="appointment_root_menu"
               sequence="0"/>
+
+    <menuitem id="create_appointment_wiz_menu"
+              name="Create Appointments"
+              action="action_create_appointment"
+              parent="appointment_root_menu"
+              sequence="2"/>
 </odoo>

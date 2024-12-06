@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-     <record id="action_approved_patient" model="ir.actions.server">
+    <record id="action_approved_patient" model="ir.actions.server">
         <field name="name">Approved Patient</field>
         <field name="model_id" ref="model_hospital_patient"/>
         <field name="binding_model_id" ref="model_hospital_patient"/>
@@ -67,6 +67,9 @@
                             confirm="Are you need to approve ?"/>
                     <button name="action_cancel" string="Cancel" type="object"
                             confirm="Are you need to cancel ?"/>
+                    <button name="%(action_create_appointment)d" string="Create Appointment" type="action"
+                            class="btn-primary"
+                            confirm="Are you need to create appointment ?"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
                 </header>
                 <sheet>

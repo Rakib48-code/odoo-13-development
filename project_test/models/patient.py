@@ -26,12 +26,12 @@ class HospitalPatient(models.Model):
     ], string='Blood Group')
     ref = fields.Char(string='Reference', default='Patients')
     check_up_date = fields.Date(string='Check Up Date', default=fields.Date.context_today)
-    doctor_id = fields.Many2many('hospital.doctor', string='Doctor Name', required=True)
+    doctor_id = fields.Many2many('hospital.doctor', string='Doctor Name', required=False)
     specialist = fields.Char(string='Specialist', related='doctor_id.specialist')
     doctor_gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
-    ], string='Gender', required=True)
+    ], string='Gender', required=False)
     appointment_id = fields.Many2many('hospital.appointment', string='Appointment')
     state = fields.Selection([
         ('draft', 'Draft'),
