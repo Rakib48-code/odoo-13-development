@@ -32,58 +32,120 @@
         </field>
     </record>
 
-    <!-- create kanban view -->
-    <record id="view_patients_menu_kanban" model="ir.ui.view">
-        <field name="name">hospital.patient.kanabn</field>
-        <field name="model">hospital.patient</field>
-        <field name="arch" type="xml">
-            <kanban>
-                <field name="id"/>
-                <field name="name"/>
-                <field name="age"/>
-                <field name="gender"/>
-                <field name="check_up_date"/>
-                <field name="ref"/>
-                <field name="image"/>
-                <templates>
-                    <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_global_click">
-                            <div class="oe_kanban_image">
-                                <!--                               <img t-att-src="kanban_image('hospital.patient','image',record.id)" alt="avatar"/>-->
-                                <img t-att-src="kanban_image('hospital.patient', 'image', record.id.raw_value)"
-                                     alt="avatar" class="o_image_64_contain"/>
+    <!--    &lt;!&ndash; create kanban view &ndash;&gt;-->
+    <!--    <record id="view_patients_menu_kanban" model="ir.ui.view">-->
+    <!--        <field name="name">hospital.patient.kanabn</field>-->
+    <!--        <field name="model">hospital.patient</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <kanban>-->
+    <!--                <field name="id"/>-->
+    <!--                <field name="name"/>-->
+    <!--                <field name="age"/>-->
+    <!--                <field name="gender"/>-->
+    <!--                <field name="check_up_date"/>-->
+    <!--                <field name="ref"/>-->
+    <!--                <field name="image"/>-->
+    <!--                <templates>-->
+    <!--                    <t t-name="kanban-box">-->
+    <!--                        <div t-attf-class="oe_kanban_global_click">-->
+    <!--                            <div class="oe_kanban_image">-->
+    <!--                                &lt;!&ndash;                               <img t-att-src="kanban_image('hospital.patient','image',record.id)" alt="avatar"/>&ndash;&gt;-->
+    <!--                                <img t-att-src="kanban_image('hospital.patient', 'image', record.id.raw_value)"-->
+    <!--                                     alt="avatar" class="o_image_64_contain"/>-->
+    <!--                            </div>-->
+    <!--                            <div class="oe_kanban_details">-->
+    <!--                                <ul>-->
+    <!--                                    <li>-->
+    <!--                                        <h2>-->
+    <!--                                            <field name="name"/>-->
+    <!--                                        </h2>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <strong>Age :</strong>-->
+    <!--                                        <field name="age"/>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <strong>Gender :</strong>-->
+    <!--                                        <field name="gender"/>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <strong>Ref :</strong>-->
+    <!--                                        <field name="ref"/>-->
+    <!--                                    </li>-->
+    <!--                                    <li>-->
+    <!--                                        <strong>Check Up Date :</strong>-->
+    <!--                                        <field name="check_up_date"/>-->
+    <!--                                    </li>-->
+    <!--                                </ul>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </t>-->
+    <!--                </templates>-->
+    <!--            </kanban>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <odoo>
+        <record id="view_patients_menu_kanban" model="ir.ui.view">
+            <field name="name">hospital.patient.kanban</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="check_up_date"/>
+                    <field name="ref"/>
+                    <field name="image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <!-- Image on the left side -->
+                                    <div class="col-md-3">
+                                        <div class="oe_kanban_image">
+                                            <img t-att-src="kanban_image('hospital.patient', 'image', record.id.raw_value)"
+                                                 alt="avatar" class="o_image_64_contain"/>
+                                        </div>
+                                    </div>
+                                    <!-- Patient details on the right side -->
+                                    <div class="col-md-9">
+                                        <div class="oe_kanban_details">
+                                            <ul>
+                                                <li>
+                                                    <h2>
+                                                        <field name="name"/>
+                                                    </h2>
+                                                </li>
+                                                <li>
+                                                    <strong>Age :</strong>
+                                                    <field name="age"/>
+                                                </li>
+                                                <li>
+                                                    <strong>Gender :</strong>
+                                                    <field name="gender"/>
+                                                </li>
+                                                <li>
+                                                    <strong>Ref :</strong>
+                                                    <field name="ref"/>
+                                                </li>
+                                                <li>
+                                                    <strong>Check Up Date :</strong>
+                                                    <field name="check_up_date"/>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="oe_kanban_details">
-                                <ul>
-                                    <li>
-                                        <h2>
-                                            <field name="name"/>
-                                        </h2>
-                                    </li>
-                                    <li>
-                                        <strong>Age :</strong>
-                                        <field name="age"/>
-                                    </li>
-                                    <li>
-                                        <strong>Gender :</strong>
-                                        <field name="gender"/>
-                                    </li>
-                                    <li>
-                                        <strong>Ref :</strong>
-                                        <field name="ref"/>
-                                    </li>
-                                    <li>
-                                        <strong>Check Up Date :</strong>
-                                        <field name="check_up_date"/>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </t>
-                </templates>
-            </kanban>
-        </field>
-    </record>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </odoo>
+
 
     <!-- tree view -->
     <record id="view_patients_menu_tree" model="ir.ui.view">
