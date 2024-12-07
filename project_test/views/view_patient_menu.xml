@@ -38,6 +38,7 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <kanban>
+                <field name="id"/>
                 <field name="name"/>
                 <field name="age"/>
                 <field name="gender"/>
@@ -47,16 +48,11 @@
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
-<!--                            <div class="oe_kanban_image" style="float: right; margin-left: 10px;">-->
-<!--                                <img t-att-src="'data:image/png;base64,' + record.image"-->
-<!--                                     alt=""-->
-<!--                                     class="o_image_64_contain"/>-->
-<!--                            </div>-->
-                            <!--                            <div class="oe_kanban_image">-->
-                            <!--                                <img t-att-src="'data:image/png;base64,' + record.image"-->
-                            <!--                                     alt=""-->
-                            <!--                                     class="o_image_64_contain"/>-->
-                            <!--                            </div>-->
+                            <div class="oe_kanban_image">
+                                <!--                               <img t-att-src="kanban_image('hospital.patient','image',record.id)" alt="avatar"/>-->
+                                <img t-att-src="kanban_image('hospital.patient', 'image', record.id.raw_value)"
+                                     alt="avatar" class="o_image_64_contain"/>
+                            </div>
                             <div class="oe_kanban_details">
                                 <ul>
                                     <li>
