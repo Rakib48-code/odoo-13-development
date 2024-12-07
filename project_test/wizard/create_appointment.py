@@ -7,8 +7,8 @@ class CreateAppointmentWizard(models.TransientModel):
 
     name = fields.Char(string='Name', required=True)
     patient_id = fields.Many2one('hospital.patient', string='Patient', required=True)
-    date_appointment = fields.Date(string='Appointment Date')
-    booking_date = fields.Date(string='Booking Date')
+    date_appointment = fields.Date(string='Appointment Date', default=fields.Date.context_today)
+    booking_date = fields.Date(string='Booking Date', default=fields.Date.context_today)
 
     def action_create(self):
         vals = {
