@@ -10,7 +10,7 @@
                 <field name="patient_id"/>
                 <field name="appointment_date"/>
                 <field name="booking_date"/>
-                <field name="sl_no"/>
+<!--                <field name="sl_no"/>-->
             </tree>
         </field>
     </record>
@@ -33,7 +33,7 @@
                             <field name="appointment_date"/>
                             <!--                            <field name="doctor_id"/>-->
                             <field name="booking_date"/>
-                            <field name="sl_no"/>
+<!--                            <field name="sl_no"/>-->
                         </group>
                     </group>
                 </sheet>

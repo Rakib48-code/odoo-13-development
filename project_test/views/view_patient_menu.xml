@@ -67,9 +67,9 @@
                             confirm="Are you need to approve ?"/>
                     <button name="action_cancel" string="Cancel" type="object"
                             confirm="Are you need to cancel ?"/>
-                    <button name="%(action_create_appointment)d" string="Create Appointment" type="action"
-                            class="btn-primary"
-                            confirm="Are you need to create appointment ?"/>
+                    <button id="button_create_appointment" string="Create Appointment" type="action"
+                            name="%(action_create_appointment)d"
+                            class="btn-primary"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
                 </header>
                 <sheet>
@@ -93,10 +93,10 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Appointment">
-                            <label for="appointment_id"/>
-                            <field name="appointment_id"/>
-                        </page>
+                        <!--                        <page string="Appointment">-->
+                        <!--                            <label for="appointment_id"/>-->
+                        <!--                            <field name="appointment_id"/>-->
+                        <!--                        </page>-->
                         <!--                        <page string="Doctor Information">-->
                         <!--                            <group>-->
                         <!--                                <field name="doctor_id">-->

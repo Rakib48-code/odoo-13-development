@@ -32,7 +32,7 @@ class HospitalPatient(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
     ], string='Gender', required=False)
-    appointment_id = fields.Many2many('hospital.appointment', string='Appointment')
+    # appointment_id = fields.Many2many('hospital.appointment', string='Appointment')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('confirm', 'Confirmed'),

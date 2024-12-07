@@ -8,11 +8,12 @@
                 <group>
                     <field name="name"/>
                     <field name="patient_id"/>
-                    <field name="appointment_date"/>
+                    <field name="date_appointment"/>
+                    <field name="booking_date"/>
                 </group>
                 <footer>
-                    <button string="Create" class="btn-primary" special="cancel"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                    <button name="action_create" string="Create" class="btn-primary" type="object"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" type="object"/>
                 </footer>
             </form>
         </field>
