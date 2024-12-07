@@ -43,15 +43,26 @@
                 <field name="gender"/>
                 <field name="check_up_date"/>
                 <field name="ref"/>
+                <field name="image"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
+<!--                            <div class="oe_kanban_image" style="float: right; margin-left: 10px;">-->
+<!--                                <img t-att-src="'data:image/png;base64,' + record.image"-->
+<!--                                     alt=""-->
+<!--                                     class="o_image_64_contain"/>-->
+<!--                            </div>-->
+                            <!--                            <div class="oe_kanban_image">-->
+                            <!--                                <img t-att-src="'data:image/png;base64,' + record.image"-->
+                            <!--                                     alt=""-->
+                            <!--                                     class="o_image_64_contain"/>-->
+                            <!--                            </div>-->
                             <div class="oe_kanban_details">
                                 <ul>
                                     <li>
-                                        <strong>
+                                        <h2>
                                             <field name="name"/>
-                                        </strong>
+                                        </h2>
                                     </li>
                                     <li>
                                         <strong>Age :</strong>
@@ -124,6 +135,7 @@
                             <field name="pt_sl" readonly="1"/>
                         </h1>
                     </div>
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <group>
                         <group>
                             <field name="name" placeholder="e.g. Patient Name"/>

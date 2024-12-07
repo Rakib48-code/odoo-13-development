@@ -40,6 +40,7 @@ class HospitalPatient(models.Model):
         ('cancel', 'Cancel')
     ], string='Status', default='draft')
     note = fields.Text(string='Note')
+    image = fields.Binary(string='Image', attachment=True)
     pt_sl = fields.Char(string='Number of Serial',required=True, copy=False, readonly=True,
                         default=lambda self: _('New'))
 
