@@ -6,7 +6,6 @@
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
             <kanban>
-                <field name="id"/>
                 <field name="patient_id"/>
                 <field name="appointment_date"/>
                 <field name="booking_date"/>
@@ -16,12 +15,9 @@
                             <div class="oe_kanban_details">
                                 <ul>
                                     <li>
-                                        <strong>ID:</strong>
-                                        <field name="id"/>
-                                    </li>
-                                    <li>
-                                        <strong>NAME:</strong>
-                                        <field name="patient_id"/>
+                                        <h4>
+                                            <field name="patient_id"/>
+                                        </h4>
                                     </li>
                                     <li>
                                         <strong>Appointment Date:</strong>

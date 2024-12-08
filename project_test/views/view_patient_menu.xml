@@ -24,6 +24,8 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name" string="Patient Name"/>
+                <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
+                <filter name="filter_female" string="Female" domain="[('gender','=','female')]"/>
                 <!--                <field name="gender"/>-->
                 <!--                <field name="blood_group"/>-->
                 <!--                <field name="dob"/>-->
@@ -113,9 +115,9 @@
                                     <div class="oe_kanban_details">
                                         <ul>
                                             <li>
-                                                <h2>
+                                                <h3>
                                                     <field name="name"/>
-                                                </h2>
+                                                </h3>
                                             </li>
                                             <li>
                                                 <strong>Age :</strong>
@@ -252,7 +254,7 @@
         <field name="name">Patients</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,kanban,form</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_filter_male':1}</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

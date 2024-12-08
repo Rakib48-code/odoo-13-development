@@ -14,6 +14,11 @@
         'views/view_female_patient.xml',
         'views/view_doctor_menu.xml',
         'views/view_appointment_menu.xml',
+        'report/patient_report.xml',
+        'report/patient_details_template.xml',
+
+    ],
+    'demo': [
         'demo/patient_demo.xml',
         'demo/doctor_demo.xml',
     ],

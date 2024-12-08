@@ -13,7 +13,7 @@ class HospitalPatient(models.Model):
         ('female', 'Female')
     ], string='Gender', required=True)
     dob = fields.Date(string='Date of Birth')
-    age = fields.Integer(string='Age', compute='_compute_age')
+    age = fields.Integer(string='Age', compute='_compute_age', readonly=False)
     blood_group = fields.Selection([
         ('A+', 'A Positive'),
         ('A-', 'A Negative'),
