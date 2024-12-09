@@ -10,3 +10,13 @@ class HospitalDoctor(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
     ], string='Gender', required=True)
+    image = fields.Binary(string='Image')
+    degree = fields.Selection([
+        ('mbbs', 'MBBS'),
+        ('md', 'MD'),
+        ('ms', 'MS'),
+        ('bds', 'BDS'),
+        ('mch', 'MCh'),
+        ('dnb', 'DNB'),
+        ('other', 'Other'),
+    ], string='Degree', required=True)
