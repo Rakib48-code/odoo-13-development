@@ -2,10 +2,14 @@ from odoo import api, fields, models, _
 from datetime import date
 
 
+# from odoo.exceptions import ValidationError
+
+
 class HospitalPatient(models.Model):
     _name = 'hospital.patient'
     _description = 'Hospital Patient Information'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    # _order = 'id desc'
 
     name = fields.Char(string='Name', required=True)
     gender = fields.Selection([
@@ -26,7 +30,7 @@ class HospitalPatient(models.Model):
     ], string='Blood Group')
     ref = fields.Char(string='Reference', default='Patients')
     check_up_date = fields.Date(string='Check Up Date', default=fields.Date.context_today)
-    doctor_id = fields.Many2many('hospital.doctor', string='Doctor Name', required=False)
+    doctor_id = fields.Many2one('hospital.doctor', string='Doctor Name', required=False)
     specialist = fields.Char(string='Specialist', related='doctor_id.specialist')
     doctor_gender = fields.Selection([
         ('male', 'Male'),
@@ -41,7 +45,7 @@ class HospitalPatient(models.Model):
     ], string='Status', default='draft')
     note = fields.Text(string='Note')
     image = fields.Binary(string='Image', attachment=True)
-    pt_sl = fields.Char(string='Number of Serial',required=True, copy=False, readonly=True,
+    pt_sl = fields.Char(string='Number of Serial', required=True, copy=False, readonly=True,
                         default=lambda self: _('New'))
 
     @api.model
@@ -53,7 +57,6 @@ class HospitalPatient(models.Model):
         res = super(HospitalPatient, self).create(vals)  # super(class name, self)
         return res
 
-
     @api.depends('dob')
     def _compute_age(self):
         today = date.today()
@@ -62,7 +65,6 @@ class HospitalPatient(models.Model):
                 rec.age = today.year - rec.dob.year
             else:
                 rec.age = 0
-
 
     def action_draft(self):
         self.state = 'draft'
@@ -75,3 +77,16 @@ class HospitalPatient(models.Model):
 
     def action_cancel(self):
         self.state = 'cancel'
+
+    # @api.constrains('name','doctor_id')
+    # def _check_doctor(self):
+    #     for rec in self:
+    #         if rec.name == rec.doctor_id:
+    #             raise ValidationError("Fields name and doctor must be different")
+
+    def action_url(self):
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'self',
+            'url': 'https://github.com/Rakib48-code',
+        }

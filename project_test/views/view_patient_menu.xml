@@ -185,6 +185,8 @@
                     <button id="button_create_appointment" string="Create Appointment" type="action"
                             name="%(action_create_appointment)d"
                             class="btn-primary"/>
+                     <button name="action_url" string="Open Url" type="object" class="btn-primary"
+                            confirm="Are you need to open url ?"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
                 </header>
                 <sheet>
@@ -224,15 +226,15 @@
                         <!--                                </field>-->
                         <!--                            </group>-->
                         <!--                        </page>-->
-                        <page string="Doctor Information">
-                            <group>
-                                <group string="Doctors">
-                                    <field name="doctor_id" widget="many2many_tags"/>
-                                    <field name="specialist"/>
-                                    <field name="doctor_gender"/>
-                                </group>
-                            </group>
-                        </page>
+<!--                        <page string="Doctor Information">-->
+<!--                            <group>-->
+<!--                                <group string="Doctors">-->
+<!--                                    <field name="doctor_id" widget="many2many_tags"/>-->
+<!--                                    <field name="specialist"/>-->
+<!--                                    <field name="doctor_gender"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+<!--                        </page>-->
 
                         <page string="Note">
                             <field name="note"/>
