@@ -80,6 +80,7 @@ class HospitalPatient(models.Model):
     def action_url(self):
         return {
             'type': 'ir.actions.act_url',
-            'target': 'self',
+            # 'target': 'self',
+            'target': 'new', # new tab a open hobe
             'url': 'https://github.com/Rakib48-code',
         }
