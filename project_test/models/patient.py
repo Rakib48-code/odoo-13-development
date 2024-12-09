@@ -2,8 +2,6 @@ from odoo import api, fields, models, _
 from datetime import date
 
 
-# from odoo.exceptions import ValidationError
-
 
 class HospitalPatient(models.Model):
     _name = 'hospital.patient'
@@ -78,11 +76,6 @@ class HospitalPatient(models.Model):
     def action_cancel(self):
         self.state = 'cancel'
 
-    # @api.constrains('name','doctor_id')
-    # def _check_doctor(self):
-    #     for rec in self:
-    #         if rec.name == rec.doctor_id:
-    #             raise ValidationError("Fields name and doctor must be different")
 
     def action_url(self):
         return {
