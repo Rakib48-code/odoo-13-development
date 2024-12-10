@@ -202,7 +202,7 @@
                     <field name="image" widget="image" class="oe_avatar"/>
                     <group>
                         <group>
-                            <field name="name" placeholder="E.G. Patient Name  "/>
+                            <field name="name" placeholder="E.G. Patient Name " class="oe_full_width"/>
                             <field name="gender"/>
                             <field name="blood_group"/>
                             <field name="check_up_date"/>
